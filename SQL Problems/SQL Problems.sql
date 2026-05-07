@@ -207,3 +207,22 @@ select * from
 	group by m.Make
 )R1
 where R1.NumOfVehicles > 12000;
+
+
+--Problem 6: Get number of vehicles made between 1950 and 2000 per make and add total vehicles column beside
+
+select m.Make , count(*) as NumOfVehicles, TotalVehicles =  (select  count(*) from VehicleDetails)
+from Makes m 
+inner join VehicleDetails vd on m.MakeID = vd.MakeID
+where year between 1950 and 2000   
+group by m.Make
+order by NumOfVehicles DESC
+
+
+
+
+
+
+
+
+
