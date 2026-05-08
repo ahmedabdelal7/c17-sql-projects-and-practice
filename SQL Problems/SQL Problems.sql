@@ -630,6 +630,43 @@ group by MakeModels.MakeID
 order by MaximunNumOfModels desc
 
 
+--Good Problem
+--Problem 48: Get the highest Manufacturers manufactured the highest number of models
+--Get the highest Manufacturers manufactured the highest number of models ,
+--remember that they could be more than one manufacturer have the same high number of models
+
+--Mine
+select * from 
+(
+	select  Makes.Make ,count(*) as NumberOfModels
+	from Makes inner join MakeModels on Makes.MakeID = MakeModels.MakeID
+	group by Make
+)R1
+where NumberOfModels = 
+(
+	select Max(NumberOfModels) from 
+	(
+		select count(*) as NumberOfModels
+		from Makes inner join MakeModels on Makes.MakeID = MakeModels.MakeID
+		group by Make
+	)R2
+)
+
+
+--Instructor
+select  Makes.Make ,count(*) as NumberOfModels
+from Makes inner join MakeModels on Makes.MakeID = MakeModels.MakeID
+group by Make
+having count(*) = 
+(
+	select Max(NumberOfModels) from 
+	(
+		select count(*) as NumberOfModels
+		from Makes inner join MakeModels on Makes.MakeID = MakeModels.MakeID
+		group by Make
+	)R2
+
+)
 
 
 
@@ -638,8 +675,7 @@ order by MaximunNumOfModels desc
 
 
 
-
-
+					
 
 
 
