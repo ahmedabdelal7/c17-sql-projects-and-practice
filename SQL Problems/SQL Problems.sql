@@ -343,8 +343,10 @@ having Count(*) > 10000
 order by m.Make ASC, TotalVehicles DESC;
 
 
+--Problem 20: Get all Vehicles that number of doors is not specified
 
-
+select * from VehicleDetails
+where NumDoors is null
 
 
 
