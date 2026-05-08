@@ -333,6 +333,87 @@ group by m.Make, dt.DriveTypeName
 order by m.Make, TotalVehicles DESC;
 
 
+--Problem 19: Get total vehicles per DriveTypeName Per Make then filter only results with total > 10,000
+
+select m.Make, dt.DriveTypeName, count(*) as TotalVehicles
+from DriveTypes dt inner join VehicleDetails vd on dt.DriveTypeID = vd.DriveTypeID 
+inner join Makes m on vd.MakeID = m.MakeID
+group by m.Make, dt.DriveTypeName
+having Count(*) > 10000
+order by m.Make ASC, TotalVehicles DESC;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
