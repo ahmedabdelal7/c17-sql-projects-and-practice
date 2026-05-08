@@ -245,3 +245,9 @@ FROM     VehicleDetails INNER JOIN
 group by Make, FuelTypeName
 order by Make
 
+--Problem 9: Get all vehicles that runs with GAS
+
+select * from VehicleDetails 
+inner join FuelTypes on VehicleDetails.FuelTypeID = FuelTypes.FuelTypeID
+where FuelTypes.FuelTypeName = N'GAS'
+
