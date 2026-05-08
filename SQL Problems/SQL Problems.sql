@@ -5,7 +5,6 @@
 
 --Q1
 use master;
-use CarData;
 restore database VehicleMakesDB
 from disk = 'E:\Course-17\SQL Problems\car-database\VehicleMakesDB.bak';
 
@@ -696,17 +695,30 @@ order by newid()
 
 
 
+--------------------------------------------------------------
+--	Self Referential Queries
+--------------------------------------------------------------
+
+--Restore Database for Employees
+
+--Q1
+use master;
+restore database EmployeesDB
+from disk = 'E:\Course-17\SQL Problems\employees-database\EmployeesDB.bak';
+
+--Q2
+use EmployeesDB
+EXEC sp_changedbowner 'sa';
 
 
+--Problem 51: Get all employees that have manager along with Manager's name.
+
+select Employees.Name, Employees.EmployeeID, Employees.Salary , Managers.Name as ManagerName
+from Employees inner join Employees Managers on  Employees.ManagerID = Managers.EmployeeID
 
 
-
-
-
-
-
-
-
+select Employees.Name, Employees.EmployeeID, Employees.Salary , Managers.Name as ManagerName
+from Employees Left join Employees Managers on  Employees.ManagerID = Managers.EmployeeID
 
 
 
