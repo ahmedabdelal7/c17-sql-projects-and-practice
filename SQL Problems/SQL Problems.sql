@@ -391,9 +391,11 @@ select Bodies.BodyName ,VehicleDetails.*
 from VehicleDetails inner join Bodies on VehicleDetails.BodyID = Bodies.BodyID
 where Bodies.BodyName = 'Sport Utility' AND Year > 2020
 
+--Problem 27: Get all vehicles that their Body is 'Coupe' or 'Hatchback' or 'Sedan'
 
-
-
+select Bodies.BodyName ,VehicleDetails.* 
+from VehicleDetails inner join Bodies on VehicleDetails.BodyID = Bodies.BodyID
+where Bodies.BodyName IN ('Coupe','Hatchback','Sedan')
 
 
 
