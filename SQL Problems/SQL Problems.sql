@@ -499,7 +499,10 @@ select count(*) NumberOfVehiclesAboveAverageEngineCC  from
 select distinct Engine_CC from VehicleDetails
 order by Engine_CC DESC
 
+--Problem 39: Get the maximum 3 Engine CC
 
+select distinct top 3 Engine_CC from VehicleDetails
+order by Engine_CC DESC
 
 
 
