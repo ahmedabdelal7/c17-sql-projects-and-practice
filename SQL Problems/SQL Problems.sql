@@ -451,10 +451,14 @@ select Vehicle_Display_Name, Year, Age = Year(getDate()) - Year
 
 from VehicleDetails
 
+--Problem 32: Get all Vehicle_Display_Name, year, Age for vehicles that their age between 15 and 25 years old
 
-
-
-
+select * from 
+(
+select Vehicle_Display_Name, Year, Age = Year(getDate()) - Year
+from VehicleDetails
+)R1
+where R1.Age between 15 and 25
 
 
 
