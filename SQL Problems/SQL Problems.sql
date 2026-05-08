@@ -468,6 +468,14 @@ select
 	Avg(Engine_CC) as AverageEnging_CC
 from VehicleDetails
 
+--Problem 34: Get all vehicles that have the minimum Engine_CC
+
+select * from VehicleDetails
+where Engine_CC = (select Min(Engine_CC)  from VehicleDetails )
+
+
+
+
 
 
 
