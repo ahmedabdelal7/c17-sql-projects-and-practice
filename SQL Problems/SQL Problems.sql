@@ -349,7 +349,10 @@ select * from VehicleDetails
 where NumDoors is null
 
 
+--Problem 21: Get Total Vehicles that number of doors is not specified
 
+select count(*) TotalWithNoSpecifiedDoors  from VehicleDetails
+where NumDoors is NULL; 
 
 
 
