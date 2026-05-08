@@ -283,6 +283,11 @@ from VehicleDetails inner join Makes on VehicleDetails.MakeID = Makes.MakeID
 group by Makes.Make having count(*) > 20000
 order by NumOfVehicles DESC
 
+--Problem 14: Get all Makes with make starts with 'B'
+
+select Makes.Make from Makes
+where Make Like 'B%'
+
 
 
 
