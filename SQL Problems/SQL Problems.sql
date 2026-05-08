@@ -717,12 +717,11 @@ select Employees.Name, Employees.EmployeeID, Employees.Salary , Managers.Name as
 from Employees inner join Employees Managers on  Employees.ManagerID = Managers.EmployeeID
 
 
+--Problem 52: Get all employees that have manager or does not have manager along with Manager's name,
+--incase no manager name show null
+
 select Employees.Name, Employees.EmployeeID, Employees.Salary , Managers.Name as ManagerName
 from Employees Left join Employees Managers on  Employees.ManagerID = Managers.EmployeeID
-
-
-
-
 
 
 
